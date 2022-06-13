@@ -1,7 +1,8 @@
 import React from "react";
 import Search from "./Search";
+import AddItem from './AddItem'
 
-function Header() {
+function Header({onSearchSubmit, checked, onSort, onSubmitNewItem}) {
   return (
     <header>
       <h1>
@@ -10,7 +11,8 @@ function Header() {
         </span>
         gregslist
       </h1>
-      <Search />
+      <Search onSearchSubmit={onSearchSubmit} checked={checked} onSort={onSort}/>
+      <AddItem onSubmitNewItem={onSubmitNewItem}/>
     </header>
   );
 }
